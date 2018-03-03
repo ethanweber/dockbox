@@ -2,7 +2,7 @@
 from __future__ import print_function
 import os
 import argparse
-
+import socket
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--command", type=str, default="", help="(optional) thing to run in container")
@@ -13,13 +13,13 @@ if __name__ == '__main__':
         command = ""
     cmd = """\
     docker run \
-      --name titan \
-      -v {source_dir}:/titan \
+      --name dockbox \
+      -v {source_dir}:/dockbox \
       -v {bazel_cache}:{bazel_cache} \
       -it \
       --rm \
-      titan-dependencies \
-      {command}\
+      dockbox-dependencies \
+      {command}
     """.format(source_dir=os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."),
                command=command,
                bazel_cache=os.path.join(os.environ["HOME"], ".cache", "bazel"))
