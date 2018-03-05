@@ -3,7 +3,7 @@
 # Building Locally
 
     sudo ./setup/install_titan_prereqs.sh
-    - and the same steps as in docker
+    - follow the same steps as in docker
 
 # Building In Docker
 
@@ -39,7 +39,7 @@ and then log out and back in. You should only ever have to do this once.
     - ./bazel-bin/examples/valkyrie/box_atlas
 
 # Steps to connect LCM from Docker with Ubuntu
-    - Docker must be configured properly to use with LCM input and output
+    - Docker must be configured properly to use with LCM input and output to interface outside of the container
     - Run ifconfig to find the network associated with the docker container, usually “docker0”
     - See https://lcm-proj.github.io/multicast_setup.html for more info
     - Run export LCM_DEFAULT_URL=udpm://239.255.76.67:7667?ttl=1 both inside Docker container (if passing data out) and outside Docker (if passing data in)
