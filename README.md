@@ -10,8 +10,7 @@ This file is not very clean, but it contains all the necessary code to create QP
 
 # Building Locally
 
-    sudo ./setup/install_dockbox_prereqs.sh
-    - and follow the same steps as in docker
+    - the same steps as in docker
 
 # Building In Docker
 
@@ -53,5 +52,5 @@ and then log out and back in. You should only ever have to do this once.
     - See https://lcm-proj.github.io/multicast_setup.html for more info
     - Run export LCM_DEFAULT_URL=udpm://239.255.76.67:7667?ttl=1 both inside Docker container (if passing data out) and outside Docker (if passing data in)
     Run after Docker container has started
-    - sudo ifconfig “docker0” multicast
-    - sudo route add -net 224.0.0.0 netmask 240.0.0.0 dev “docker0”
+    - sudo ifconfig docker0 multicast
+    - sudo route add -net 224.0.0.0 netmask 240.0.0.0 dev docker0
